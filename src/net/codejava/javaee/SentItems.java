@@ -20,7 +20,7 @@ public class SentItems extends HttpServlet {
         out.print("<h1 style='margin-left:40%;'>Inbox</h1>");
         out.print("<h2>Welcome "+ userName + "</h2>");
         out.print("<h2>Location "+ location + "</h2>");
-        out.print("<a href='Inbox?user=" + userName + "&location="+ location + "'/>Inbox</a>");
+        out.print("<a href='InboxServlet?user=" + userName + "&location="+ location + "'/>Inbox</a>");
         out.print("</body></html>");
     }
 }
