@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
         String location=request.getParameter("location");
         if("jack".equals(username)&& "rose".equalsIgnoreCase(password))
         {
-            response.sendRedirect("Inbox?user="+username+"&location="+location);
+            response.sendRedirect("InboxServlet?user="+username+"&location="+location);
         }
     }
 }
