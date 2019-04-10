@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -18,7 +19,12 @@ public class LoginServlet extends HttpServlet {
         String location=request.getParameter("location");
         if("jack".equals(username)&& "rose".equalsIgnoreCase(password))
         {
-            response.sendRedirect("InboxServlet?user="+username+"&location="+location);
+           // response.sendRedirect("InboxServlet?user="+username+"&location="+location);
+            Cookie cookie1 = new Cookie("user", username);
+            Cookie cookie2 = new Cookie("location", location);
+            response.addCookie(cookie1);
+            response.addCookie(cookie2);
+            response.sendRedirect("InboxServlet");
         }
     }
 }

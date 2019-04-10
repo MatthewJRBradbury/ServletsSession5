@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 
 @WebServlet("/InboxServlet")
 
@@ -14,8 +15,18 @@ public class InboxServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String userName=request.getParameter("user");
-        String location=request.getParameter("location");
+	Cookie[] cookies = request.getCookies();
+
+        String userName = null;
+        String location = null;
+	for (Cookie cookie : cookies) {
+	    if (cookie.getName().equals("user")) {
+		userName = cookie.getValue();
+	    }else if (cookie.getName().equals("location")) {
+		location = cookie.getValue();
+	    }
+	}
+
         PrintWriter out=response.getWriter();
         out.print("<html><head><title>Inbox</title></head><body>");
         out.print("<h1 style='margin-left:40%;'>Inbox</h1>");
