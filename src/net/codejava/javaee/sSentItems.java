@@ -31,7 +31,7 @@ public class sSentItems extends HttpServlet {
         out.print("<h1 style='margin-left:40%;'>Inbox</h1>");
         out.print("<h2>Welcome "+ userName + "</h2>");
         out.print("<h2>Location "+ location + "</h2>");
-        out.print("<a href='InboxServlet'/>Inbox</a>");
+        out.print("<a href='sInboxServlet'/>Inbox</a>");
 	out.print("<br/>");
 	out.print("<a href='Logout'/>Log Out</a>");
         out.print("</body></html>");
