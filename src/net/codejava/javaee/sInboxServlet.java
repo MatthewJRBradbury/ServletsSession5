@@ -31,7 +31,7 @@ public class sInboxServlet extends HttpServlet {
         out.print("<h1 style='margin-left:40%;'>Inbox</h1>");
         out.print("<h2>Welcome "+ userName + "</h2>");
         out.print("<h2>Location "+ location + "</h2>");
-        out.print("<a href='SentItems'/>Sent Items</a>");
+        out.print("<a href='sSentItems'/>Sent Items</a>");
 	out.print("<br/>");
 	out.print("<a href='LogOut'/>Log out</a>");
         out.print("</body></html>");
